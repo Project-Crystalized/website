@@ -23,7 +23,6 @@ body {
     background: url("/assets/websitestars.png") center / cover no-repeat fixed, linear-gradient(135deg, #131372, #ff69b4);
     color: #fff;
     overflow-x: hidden;
-    overscroll-behavior: none;
 }
 
 header {
@@ -40,17 +39,10 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    border-radius: 10px;
 }
 
 .logo img {
-/*     color: #ff69b4; */
-/*     text-shadow: 2px 2px #1e3c72; */
-    transition: transform 0.3s;
     width: 50px;
-/*     margin-right: 0px; */
-/*     background: rgba(255, 105, 180, 0.7); */
-/*     opacity: 0.7; */
 }
 
 .logo h1 {
@@ -91,29 +83,68 @@ nav ul li a:hover {
     border-radius: 10px;
     font-size: 18px;
     transition: transform 0.3s;
+    animation: crystalGlow 2s infinite;
 }
 
 .cta-button:hover {
     transform: scale(1.1);
 }
 
+#home,
 section {
     padding: 80px 20px;
     text-align: center;
 }
 
-section h2 {
+section h2,
+#home h2 {
     font-size: 36px;
     color: #ff69b4;
+}
+
+section h2 {
     margin-bottom: 10px;
 }
 
+#home h2 {
+    margin-bottom: 40px;
+}
+
 section p {
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 2;
     text-align: justify;
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 35px;
+}
+
+#home ul.highlights {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+#home ul.highlights li {
+    font-size: 18px;
+    line-height: 2;
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#home ul.highlights li::before {
+    content: "\2022";
+    color: #ff69b4;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+}
+
+#home ul.highlights li strong {
+    color: #ff69b4;
 }
 
 footer {
@@ -130,8 +161,4 @@ footer p {
     0% { box-shadow: 0 0 10px #ff69b4; }
     50% { box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff1493; }
     100% { box-shadow: 0 0 10px #ff69b4; }
-}
-
-.cta-button{
-    animation: crystalGlow 2s infinite;
 }
