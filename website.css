@@ -110,6 +110,7 @@ section h2 {
 
 section p {
     font-size: 14px;
+    text-align: justify;
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 35px;
