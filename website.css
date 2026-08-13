@@ -92,20 +92,20 @@ body > h2:first-of-type {
     margin-bottom: 40px;
 }
 
-body > p {
+body > p,
+body > ul {
     font-size: 18px;
     line-height: 2;
-    text-align: justify;
     max-width: 800px;
     margin: 0 auto 35px;
 }
 
+body > p {
+    text-align: center;
+}
+
 body > ul {
-    font-size: 18px;
-    line-height: 2;
     list-style: none;
-    max-width: 800px;
-    margin: 0 auto 35px;
     text-align: left;
 }
 
@@ -124,6 +124,21 @@ body > ul li::before {
 
 body > ul li strong {
     color: #ff69b4;
+}
+
+.server-label {
+    display: block;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid #ff69b4;
+    border-radius: 10px;
+    padding: 15px 40px;
+    box-shadow: 0 0 15px #ff69b4;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    color: #f2d3ff;
+    text-shadow: 2px 2px #05004a;
+    font-size: 18px;
 }
 
 .cta-button {
