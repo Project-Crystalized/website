@@ -8,22 +8,7 @@
     <link rel="stylesheet" href="/website.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="/assets/crystalized_logo_icon.png" alt="Crystalized Logo">
-            <h1>Crystalized</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#join">Join Us</a></li>
-                <li><a href="*">*</a></li>
-                <li><a href="#Games">Our games</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div style="height: 120px;"></div>
+{{include "/templates/header.html" .}}
 
     <section id="home" >
         <h2>Welcome to Crystalized!</h2>
@@ -50,8 +35,6 @@
         <a href="https://discord.com" class="cta-button">Join Discord</a>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Crystalized Minecraft Server.</p>
-    </footer>
+{{include "/templates/footer.html" .}}
 </body>
 </html>

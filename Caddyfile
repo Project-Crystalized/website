@@ -1,0 +1,8 @@
+# override the domain with the SITE_DOMAIN env var, e.g.
+# Usage: 
+# when local testing: ```SITE_DOMAIN=:8080 caddy run```
+# Serve from the directory this Caddyfile lives in.
+{$SITE_DOMAIN:crystalized.cc} {
+	templates
+	file_server
+}
