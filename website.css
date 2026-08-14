@@ -30,6 +30,7 @@ body {
     overflow-x: hidden;
 }
 
+/* background sparkles - delete this block to disable */
 body::before,
 body::after {
     content: "";
@@ -62,6 +63,19 @@ body::after {
         radial-gradient(2px 2px at 80px 75px, #fff, transparent);
     background-position: 0 0, 0 0, 0 0;
     animation: emit 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+@keyframes emit {
+    0%   { background-position: 0 0, 0 0, 0 0; }
+    25%  { background-position: 60px -80px, -40px 50px, 30px 100px; }
+    50%  { background-position: -50px 40px, 90px -60px, -70px -90px; }
+    75%  { background-position: 40px 70px, -30px -40px, 80px 30px; }
+    100% { background-position: 0 0, 0 0, 0 0; }
 }
 
 header {
@@ -138,7 +152,7 @@ nav ul li a:hover {
 body > h1 {
     font-size: 48px;
     margin: 80px 20px 40px;
-    background: linear-gradient(90deg, #ff1493, #fff, #ff69b4, #fff, #ff1493);
+    background: linear-gradient(90deg, #ff69b4, #f2d3ff, #ff69b4);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -236,19 +250,6 @@ footer {
     padding: 10px;
     text-align: center;
     font-size: 8px;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-}
-
-@keyframes emit {
-    0%   { background-position: 0 0, 0 0, 0 0; }
-    25%  { background-position: 60px -80px, -40px 50px, 30px 100px; }
-    50%  { background-position: -50px 40px, 90px -60px, -70px -90px; }
-    75%  { background-position: 40px 70px, -30px -40px, 80px 30px; }
-    100% { background-position: 0 0, 0 0, 0 0; }
 }
 
 @keyframes shine {

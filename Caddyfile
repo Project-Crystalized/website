@@ -4,5 +4,5 @@
 # Serve from the directory this Caddyfile lives in.
 {$SITE_DOMAIN:crystalized.cc} {
 	templates
-	file_server
+	file_server browse
 }
