@@ -19,16 +19,49 @@ a {
 }
 
 html {
-    background: #131372;
+    background: url("/assets/websitestars.png") center / cover no-repeat fixed, linear-gradient(135deg, #131372, #ff69b4);
     overscroll-behavior: none;
 }
 
 body {
-    background: url("/assets/websitestars.png") center / cover no-repeat fixed, linear-gradient(135deg, #131372, #ff69b4);
     color: #fff;
     padding: 120px 0 0;
     text-align: center;
     overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-size: 160px 160px;
+}
+
+body::before {
+    background-image: radial-gradient(2px 14px at 30px 35px, #fff, transparent),
+        radial-gradient(14px 2px at 30px 35px, #fff, transparent),
+        radial-gradient(3px 3px at 30px 35px, #fff, transparent),
+        radial-gradient(2px 20px at 125px 105px, #fff, transparent),
+        radial-gradient(20px 2px at 125px 105px, #fff, transparent),
+        radial-gradient(5px 5px at 125px 105px, #fff, transparent),
+        radial-gradient(2px 16px at 80px 90px, #fff, transparent),
+        radial-gradient(16px 2px at 80px 90px, #fff, transparent),
+        radial-gradient(4px 4px at 80px 90px, #fff, transparent),
+        radial-gradient(2px 12px at 140px 25px, #fff, transparent),
+        radial-gradient(12px 2px at 140px 25px, #fff, transparent),
+        radial-gradient(3px 3px at 140px 25px, #fff, transparent);
+    animation: twinkle 2.5s ease-in-out infinite;
+}
+
+body::after {
+    background-image: radial-gradient(2px 2px at 30px 15px, #fff, transparent),
+        radial-gradient(2px 2px at 125px 90px, #fff, transparent),
+        radial-gradient(2px 2px at 80px 75px, #fff, transparent);
+    background-position: 0 0, 0 0, 0 0;
+    animation: emit 4s ease-in-out infinite;
 }
 
 header {
@@ -65,21 +98,53 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 50px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 nav ul li a {
     color: #f2d3ff;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s;
+    margin: 0 10px;
+    padding: 8px 14px;
+    border: 2px solid rgba(242, 211, 255, 0.5);
+    border-radius: 8px;
+    display: inline-block;
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #8aadff;
+    color: #05004a;
+    background: #f2d3ff;
+    border-color: #f2d3ff;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+        margin: 0 5px;
+    }
+
+    body {
+        padding: 150px 0 0;
+    }
+}
+
+body > h1 {
+    font-size: 48px;
+    margin: 80px 20px 40px;
+    background: linear-gradient(90deg, #ff1493, #fff, #ff69b4, #fff, #ff1493);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0 #05004a);
+    animation: shine 2.5s linear infinite;
 }
 
 body > h2 {
@@ -126,6 +191,14 @@ body > ul li strong {
     color: #ff69b4;
 }
 
+.placer {
+    color: #ff4d5b;
+}
+
+.breaker {
+    color: #2fd84f;
+}
+
 .server-label {
     display: block;
     background: rgba(0, 0, 0, 0.7);
@@ -162,10 +235,25 @@ footer {
     background: #272072;
     padding: 10px;
     text-align: center;
+    font-size: 8px;
 }
 
-footer p {
-    font-size: 8px;
+@keyframes twinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+@keyframes emit {
+    0%   { background-position: 0 0, 0 0, 0 0; }
+    25%  { background-position: 60px -80px, -40px 50px, 30px 100px; }
+    50%  { background-position: -50px 40px, 90px -60px, -70px -90px; }
+    75%  { background-position: 40px 70px, -30px -40px, 80px 30px; }
+    100% { background-position: 0 0, 0 0, 0 0; }
+}
+
+@keyframes shine {
+    0%, 70% { background-position: 0% center; }
+    85%, 100% { background-position: 200% center; }
 }
 
 @keyframes crystalGlow {
