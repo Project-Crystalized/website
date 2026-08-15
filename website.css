@@ -35,13 +35,14 @@ body::before,
 body::after {
     content: "";
     position: fixed;
-    inset: 0;
+    inset: -160px;
     z-index: -1;
     pointer-events: none;
     background-size: 160px 160px;
 }
 
 body::before {
+    will-change: opacity;
     background-image: radial-gradient(2px 14px at 30px 35px, #fff, transparent),
         radial-gradient(14px 2px at 30px 35px, #fff, transparent),
         radial-gradient(3px 3px at 30px 35px, #fff, transparent),
@@ -58,10 +59,10 @@ body::before {
 }
 
 body::after {
+    will-change: transform;
     background-image: radial-gradient(2px 2px at 30px 15px, #fff, transparent),
         radial-gradient(2px 2px at 125px 90px, #fff, transparent),
         radial-gradient(2px 2px at 80px 75px, #fff, transparent);
-    background-position: 0 0, 0 0, 0 0;
     animation: emit 4s ease-in-out infinite;
 }
 
@@ -71,15 +72,14 @@ body::after {
 }
 
 @keyframes emit {
-    0%   { background-position: 0 0, 0 0, 0 0; }
-    25%  { background-position: 60px -80px, -40px 50px, 30px 100px; }
-    50%  { background-position: -50px 40px, 90px -60px, -70px -90px; }
-    75%  { background-position: 40px 70px, -30px -40px, 80px 30px; }
-    100% { background-position: 0 0, 0 0, 0 0; }
+    0%, 100% { transform: translate(0, 0); }
+    25%      { transform: translate(60px, -80px); }
+    50%      { transform: translate(-50px, 40px); }
+    75%      { transform: translate(40px, 70px); }
 }
 
 header {
-    background: rgba(0, 0, 0, 0.7);
+    background: #443165;
     padding: 10px;
     display: flex;
     justify-content: space-between;
