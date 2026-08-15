@@ -31,51 +31,38 @@ body {
 }
 
 /* background sparkles - delete this block to disable */
-body::before,
-body::after {
+body::before {
     content: "";
     position: fixed;
-    inset: -160px;
+    inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-size: 160px 160px;
-}
-
-body::before {
+    background-size: 300px 300px;
     will-change: opacity;
-    background-image: radial-gradient(2px 14px at 30px 35px, #fff, transparent),
-        radial-gradient(14px 2px at 30px 35px, #fff, transparent),
-        radial-gradient(3px 3px at 30px 35px, #fff, transparent),
-        radial-gradient(2px 20px at 125px 105px, #fff, transparent),
-        radial-gradient(20px 2px at 125px 105px, #fff, transparent),
-        radial-gradient(5px 5px at 125px 105px, #fff, transparent),
-        radial-gradient(2px 16px at 80px 90px, #fff, transparent),
-        radial-gradient(16px 2px at 80px 90px, #fff, transparent),
-        radial-gradient(4px 4px at 80px 90px, #fff, transparent),
-        radial-gradient(2px 12px at 140px 25px, #fff, transparent),
-        radial-gradient(12px 2px at 140px 25px, #fff, transparent),
-        radial-gradient(3px 3px at 140px 25px, #fff, transparent);
+    background-image: radial-gradient(2px 16px at 45px 50px, #fff, transparent),
+        radial-gradient(16px 2px at 45px 50px, #fff, transparent),
+        radial-gradient(4px 4px at 45px 50px, #fff, transparent),
+        radial-gradient(2px 12px at 245px 40px, #fff, transparent),
+        radial-gradient(12px 2px at 245px 40px, #fff, transparent),
+        radial-gradient(3px 3px at 245px 40px, #fff, transparent),
+        radial-gradient(2px 20px at 150px 150px, #fff, transparent),
+        radial-gradient(20px 2px at 150px 150px, #fff, transparent),
+        radial-gradient(5px 5px at 150px 150px, #fff, transparent),
+        radial-gradient(2px 14px at 275px 210px, #fff, transparent),
+        radial-gradient(14px 2px at 275px 210px, #fff, transparent),
+        radial-gradient(3px 3px at 275px 210px, #fff, transparent),
+        radial-gradient(2px 16px at 60px 250px, #fff, transparent),
+        radial-gradient(16px 2px at 60px 250px, #fff, transparent),
+        radial-gradient(4px 4px at 60px 250px, #fff, transparent),
+        radial-gradient(2px 12px at 205px 285px, #fff, transparent),
+        radial-gradient(12px 2px at 205px 285px, #fff, transparent),
+        radial-gradient(3px 3px at 205px 285px, #fff, transparent);
     animation: twinkle 2.5s ease-in-out infinite;
-}
-
-body::after {
-    will-change: transform;
-    background-image: radial-gradient(2px 2px at 30px 15px, #fff, transparent),
-        radial-gradient(2px 2px at 125px 90px, #fff, transparent),
-        radial-gradient(2px 2px at 80px 75px, #fff, transparent);
-    animation: emit 4s ease-in-out infinite;
 }
 
 @keyframes twinkle {
     0%, 100% { opacity: 0.4; }
     50% { opacity: 1; }
-}
-
-@keyframes emit {
-    0%, 100% { transform: translate(0, 0); }
-    25%      { transform: translate(60px, -80px); }
-    50%      { transform: translate(-50px, 40px); }
-    75%      { transform: translate(40px, 70px); }
 }
 
 header {
