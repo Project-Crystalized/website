@@ -162,7 +162,7 @@ body > p,
 body > ul {
     font-size: 18px;
     line-height: 2;
-    max-width: 800px;
+    max-width: min(1100px, 90vw);
     margin: 0 auto 35px;
 }
 
