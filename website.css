@@ -74,6 +74,7 @@ header {
 
 .logo img {
 	width: 50px;
+	height: auto;
 }
 
 .logo h1 {
