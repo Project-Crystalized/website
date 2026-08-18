@@ -37,27 +37,16 @@ body::before {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-size: 300px 300px;
+    background: url("/assets/sparkle-tile.png") repeat;
     will-change: opacity;
-    background-image: radial-gradient(2px 16px at 45px 50px, #fff, transparent),
-        radial-gradient(16px 2px at 45px 50px, #fff, transparent),
-        radial-gradient(4px 4px at 45px 50px, #fff, transparent),
-        radial-gradient(2px 12px at 245px 40px, #fff, transparent),
-        radial-gradient(12px 2px at 245px 40px, #fff, transparent),
-        radial-gradient(3px 3px at 245px 40px, #fff, transparent),
-        radial-gradient(2px 20px at 150px 150px, #fff, transparent),
-        radial-gradient(20px 2px at 150px 150px, #fff, transparent),
-        radial-gradient(5px 5px at 150px 150px, #fff, transparent),
-        radial-gradient(2px 14px at 275px 210px, #fff, transparent),
-        radial-gradient(14px 2px at 275px 210px, #fff, transparent),
-        radial-gradient(3px 3px at 275px 210px, #fff, transparent),
-        radial-gradient(2px 16px at 60px 250px, #fff, transparent),
-        radial-gradient(16px 2px at 60px 250px, #fff, transparent),
-        radial-gradient(4px 4px at 60px 250px, #fff, transparent),
-        radial-gradient(2px 12px at 205px 285px, #fff, transparent),
-        radial-gradient(12px 2px at 205px 285px, #fff, transparent),
-        radial-gradient(3px 3px at 205px 285px, #fff, transparent);
     animation: twinkle 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+        opacity: 0.5;
+    }
 }
 
 @keyframes twinkle {
