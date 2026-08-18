@@ -1,17 +1,17 @@
 </main>
 <footer>
-    <p>&copy; 2026 Crystalized Minecraft Server.</p>
+	<p>&copy; 2026 Crystalized Minecraft Server.</p>
 </footer>
 <script>
-    // Sets a CSS variable (--scroll-y) so the sparkle parallax in website.css can use it
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                document.documentElement.style.setProperty("--scroll-y", window.scrollY + "px");
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
+	// Sets a CSS variable (--scroll-y) so the sparkle parallax in website.css can use it
+	let ticking = false;
+	window.addEventListener("scroll", () => {
+		if (!ticking) {
+			requestAnimationFrame(() => {
+				document.documentElement.style.setProperty("--scroll-y", window.scrollY + "px");
+				ticking = false;
+			});
+			ticking = true;
+		}
+	}, { passive: true });
 </script>
