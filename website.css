@@ -26,7 +26,7 @@ a {
 }
 
 html {
-	background: url("/assets/websitestars.png") center / cover no-repeat fixed, linear-gradient(135deg, #131372, #ff69b4);
+	background: url("/assets/websitestars.webp") center / cover no-repeat fixed, linear-gradient(135deg, #131372, #ff69b4);
 	overscroll-behavior: none;
 }
 
@@ -44,7 +44,7 @@ body::before {
 	inset: 0;
 	z-index: -1;
 	pointer-events: none;
-	background: url("/assets/sparkle-tile.png") repeat;
+	background: url("/assets/sparkle-tile.webp") repeat;
 	will-change: opacity, transform;
 	transform: translateY(calc(var(--scroll-y, 0px) * -0.2));
 	animation: twinkle 2.5s ease-in-out infinite;
