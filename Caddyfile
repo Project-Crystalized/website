@@ -11,6 +11,11 @@
         Referrer-Policy "strict-origin-when-cross-origin"      # limit referrer data on cross-origin links
     }
 
+    @cacheable {
+        path *.png *.webp *.woff2 *.zip
+    }
+    header @cacheable Cache-Control "public, max-age=604800"
+
     templates           # process {{include}} directives in HTML files
     file_server browse  # serve static files, show directory listings
 }
