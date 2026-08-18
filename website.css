@@ -239,7 +239,7 @@ pre {
     border: 2px solid #ff69b4;
     border-radius: 8px;
     padding: 20px;
-    max-width: min(1100px, 90vw);
+    width: fit-content;
     margin: 0 auto 35px;
     text-align: left;
     overflow-x: auto;
