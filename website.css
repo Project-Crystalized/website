@@ -171,6 +171,10 @@ body > ul li {
     margin-bottom: 20px;
 }
 
+.spaced-list li {
+    margin-bottom: 50px;
+}
+
 body > ul li::before {
     content: "\2022";
     color: var(--pink);
