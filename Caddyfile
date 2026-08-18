@@ -3,6 +3,14 @@
 # when local testing: ```SITE_DOMAIN=:8080 caddy run```
 # Serve from the directory this Caddyfile lives in.
 {$SITE_DOMAIN:crystalized.cc} {
-	templates
-	file_server browse
+    encode gzip zstd  # compress text responses (HTML, CSS) to reduce transfer size
+
+    header {
+        X-Content-Type-Options "nosniff"                       # prevent MIME-type sniffing
+        Content-Security-Policy "frame-ancestors *"              # allow embedding on any site
+        Referrer-Policy "strict-origin-when-cross-origin"      # limit referrer data on cross-origin links
+    }
+
+    templates           # process {{include}} directives in HTML files
+    file_server browse  # serve static files, show directory listings
 }
