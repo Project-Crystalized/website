@@ -18,7 +18,7 @@ mv pack.zip "$sha1.zip"
 scp "$sha1.zip" "$host:$dir"
 
 # point latest.zip at the new zip
-ssh "$host" "ln -sf $sha1.zip $dir/latest.zip"
+ssh "$host" "ln -sf $sha1.zip $dir/crystalized-latest.zip"
 
 # delete old zips on the server (older than 30 days)
 ssh "$host" "find $dir -maxdepth 1 -type f -mtime +30 -delete"
