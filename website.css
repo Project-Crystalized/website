@@ -38,15 +38,9 @@ body::before {
     z-index: -1;
     pointer-events: none;
     background: url("/assets/sparkle-tile.png") repeat;
-    will-change: opacity;
+    will-change: opacity, transform;
+    transform: translateY(calc(var(--scroll-y, 0px) * -0.2));
     animation: twinkle 2.5s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body::before {
-        animation: none;
-        opacity: 0.5;
-    }
 }
 
 @keyframes twinkle {
@@ -258,4 +252,18 @@ footer {
     0% { box-shadow: 0 0 10px #ff69b4; }
     50% { box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff1493; }
     100% { box-shadow: 0 0 10px #ff69b4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+        opacity: 0.5;
+        transform: none;
+    }
+    body > h1 {
+        animation: none;
+    }
+    .cta-button {
+        animation: none;
+    }
 }
