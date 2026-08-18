@@ -93,7 +93,7 @@ nav ul {
     justify-content: flex-end;
 }
 
-nav ul li a {
+    nav a {
     color: var(--light);
     text-decoration: none;
     font-size: 16px;
@@ -105,7 +105,7 @@ nav ul li a {
     transition: 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: var(--dark);
     background: var(--light);
     border-color: var(--light);
@@ -116,7 +116,7 @@ nav ul li a:hover {
         justify-content: center;
     }
 
-    nav ul li a {
+nav a {
         font-size: 12px;
         margin: 0 5px;
     }
@@ -126,14 +126,12 @@ nav ul li a:hover {
     }
 }
 
-body > h1,
-body > h2 {
+main h1,
+main h2 {
     max-width: min(1100px, 90vw);
-    margin-left: auto;
-    margin-right: auto;
 }
 
-body > h1 {
+main h1 {
     font-size: 48px;
     margin: 80px auto 40px;
     background: linear-gradient(90deg, var(--pink), var(--light), var(--pink));
@@ -145,18 +143,18 @@ body > h1 {
     animation: shine 2.5s linear infinite;
 }
 
-body > h2 {
+main h2 {
     font-size: 36px;
     color: var(--pink);
     margin: 80px auto 10px;
 }
 
-body > h2:first-of-type {
+main h2:first-of-type {
     margin-bottom: 40px;
 }
 
-body > p,
-body > ul {
+main p,
+main ul {
     font-size: 18px;
     line-height: 2;
     max-width: min(1100px, 90vw);
@@ -165,7 +163,7 @@ body > ul {
     list-style: none;
 }
 
-body > ul li {
+main ul li {
     padding-left: 30px;
     position: relative;
     margin-bottom: 20px;
@@ -175,14 +173,14 @@ body > ul li {
     margin-bottom: 50px;
 }
 
-body > ul li::before {
+main ul li::before {
     content: "\2022";
     color: var(--pink);
     position: absolute;
     left: 0;
 }
 
-body > ul li strong {
+main ul li strong {
     color: var(--pink);
 }
 
@@ -269,7 +267,7 @@ footer {
         opacity: 0.5;
         transform: none;
     }
-    body > h1 {
+    main h1 {
         animation: none;
     }
     .cta-button {
