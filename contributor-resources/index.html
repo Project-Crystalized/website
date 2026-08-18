@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Resources and tools for Crystalized contributors.">
+		<title>Crystalized - Contributor Resources</title>
+		<link rel="icon" type="image/png" href="/assets/crystalized_logo_icon.png">
+		<link rel="stylesheet" href="/website.css">
+	</head>
+	<body>
+		{{include "/templates/header.html" .}}
+
+		<h1>Welcome to crystalized resources 👋</h1>
+		<p>here are some resources to help contibuters!</p>
+		<br>
+		<h2>litestrike maps:</h2>
+		<p>these maps are provided as zip files, unzip them to get the world folder</p>
+		<p><a href="crystalized.cc/worlds/portside-clean.zip">portside map download</a></p>
+		<p><a href="crystalized.cc/worlds/zero-clean.zip">zero map download</a></p>
+		<p><a href="crystalized.cc/worlds/crusaders.zip">crusaders map download</a></p>
+
+		<br>
+		<h3>a example of a litestrike map_config.json file:</h3>
+		<pre><code class="language-json">{
+			"version": 3,
+			"placer_spawn": [45.5, 171.5, 26.5],
+			"breaker_spawn": [47.5, 171.5, -82.5],
+			"queue_spawn": [101.5, 171.5, 4.5],
+
+			"map_name": "Zero",
+
+			"map_features": {
+			"launch_pad_block": "purple_concrete_powder",
+			"levi_pad_block": "purpur_block"
+			},
+
+
+			"border_marker": "cherry_planks",
+
+			"border_block_type": "red_stained_glass",
+			"border_height": 15
+
+			}
+		</code></pre>
+
+	{{include "/templates/footer.html" .}}
+</body>
+</html>
