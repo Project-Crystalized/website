@@ -139,6 +139,9 @@ nav ul li a:hover {
 body > h1 {
     font-size: 48px;
     margin: 80px 20px 40px;
+    max-width: min(1100px, 90vw);
+    margin-left: auto;
+    margin-right: auto;
     background: linear-gradient(90deg, #ff69b4, #f2d3ff, #ff69b4);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -152,6 +155,9 @@ body > h2 {
     font-size: 36px;
     color: #ff69b4;
     margin: 80px 20px 10px;
+    max-width: min(1100px, 90vw);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body > h2:first-of-type {
@@ -164,15 +170,11 @@ body > ul {
     line-height: 2;
     max-width: min(1100px, 90vw);
     margin: 0 auto 35px;
-}
-
-body > p {
-    text-align: center;
+    text-align: left;
 }
 
 body > ul {
     list-style: none;
-    text-align: left;
 }
 
 body > ul li {
@@ -230,6 +232,25 @@ body > ul li strong {
 
 .cta-button:hover {
     transform: scale(1.1);
+}
+
+pre {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ff69b4;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: min(1100px, 90vw);
+    margin: 0 auto 35px;
+    text-align: left;
+    overflow-x: auto;
+}
+
+pre code {
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    color: #f2d3ff;
 }
 
 footer {
