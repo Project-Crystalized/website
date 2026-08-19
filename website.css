@@ -185,7 +185,7 @@ main ul li::before {
 	left: 0;
 }
 
-main ul li strong {
+main strong {
 	color: var(--pink);
 }
 
