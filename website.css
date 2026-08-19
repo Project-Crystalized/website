@@ -67,6 +67,8 @@ header {
 	z-index: 1000;
 }
 
+#nav-toggle, .menu-toggle { display: none; }
+
 .logo {
 	display: flex;
 	align-items: center;
@@ -259,6 +261,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+	.menu-toggle { display: block; cursor: pointer; }
+	.menu-toggle span { display: block; width: 25px; height: 3px; margin: 4px 0; background: var(--light); }
+
+	nav { display: none; width: 100%; }
+	#nav-toggle:checked ~ nav { display: block; }
+
 	header {
 		flex-wrap: wrap;
 	}
@@ -270,10 +278,6 @@ footer {
 	.logo span {
 		font-size: 10px;
 		padding: 12px 8px;
-	}
-
-	nav {
-		width: 100%;
 	}
 
 	nav ul {
