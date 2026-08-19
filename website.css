@@ -37,6 +37,13 @@ body {
 	overflow-x: hidden;
 }
 
+main {
+	transform: rotate(-2deg);
+	transform-origin: center top;
+	width: 110vw;
+	margin-left: -10vw;
+}
+
 /* background sparkles - delete this block to disable */
 body::before {
 	content: "";
@@ -113,6 +120,11 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+	main {
+		width: 100vw;
+		margin-left: 0;
+	}
+
 	nav ul {
 		justify-content: center;
 	}
