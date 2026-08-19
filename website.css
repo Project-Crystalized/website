@@ -197,6 +197,13 @@ main ul li strong {
 	color: #2fd84f;
 }
 
+.announcement-date {
+	font-size: 14px;
+	color: var(--light);
+	opacity: 0.7;
+	margin-bottom: 30px;
+}
+
 .server-label {
 	display: block;
 	background: rgba(0, 0, 0, 0.7);
