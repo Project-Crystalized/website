@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 {{include "/templates/head.html" .}}
-	<meta name="description" content="Download the Crystalized resource pack, worlds and other resources to help contributing.">
+	<meta name="description" content="Download the Crystalized resource pack, worlds and other resources.">
 	<title>Crystalized - Downloads</title>
 </head>
 <body>
@@ -12,6 +12,30 @@
 	<p>Here are all the publicly available download links:</p>
 	<p>Resource pack: <a href="/downloads/resourcepacks/crystalized-latest.zip" class="cta-button">Latest Crystalized Resource Pack</a></p>
 	<p>World files: <a href="/downloads/worlds/">A raw list of some Maps</a></p>
+	<p>Source code: <a href="https://github.com/Project-Crystalized">All of our open source code lives here on GitHub</a></p>
+
+		<p> TODO move info from the crystalized github wiki over to here</p>
+	<h3>Example map_config.json for making a litestrike map:</h3>
+	<pre><code class="language-json">
+{
+	"version": 3,
+	"placer_spawn": [45.5, 171.5, 26.5],
+	"breaker_spawn": [47.5, 171.5, -82.5],
+	"queue_spawn": [101.5, 171.5, 4.5],
+
+	"map_name": "Zero",
+
+	"map_features": {
+		"launch_pad_block": "purple_concrete_powder",
+		"levi_pad_block": "purpur_block"
+	},
+
+	"border_marker": "cherry_planks",
+
+	"border_block_type": "red_stained_glass",
+	"border_height": 15
+}
+	</code></pre>
 
 {{include "/templates/footer.html" .}}
 </body>
