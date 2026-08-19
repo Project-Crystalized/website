@@ -12,7 +12,7 @@
     }
 
     @cacheable {
-        path *.png *.webp *.woff2 *.zip
+        path *.png *.webp *.css *.woff2 *.zip
     }
     header @cacheable Cache-Control "public, max-age=604800"
 
