@@ -37,13 +37,6 @@ body {
 	overflow-x: hidden;
 }
 
-main {
-	transform: rotate(-2deg);
-	transform-origin: center top;
-	width: 110vw;
-	margin-left: -10vw;
-}
-
 /* background sparkles - delete this block to disable */
 body::before {
 	content: "";
@@ -87,7 +80,7 @@ header {
 .logo span {
 	font-size: 12px;
 	color: var(--light);
-	background: rgba(255, 105, 180, 0.7);
+	background: var(--pink);
 	text-shadow: 2px 2px var(--dark);
 	padding: 18px 10px;
 	border-radius: 0 var(--radius) var(--radius) 0;
@@ -117,30 +110,6 @@ nav a:hover {
 	color: var(--dark);
 	background: var(--light);
 	border-color: var(--light);
-}
-
-@media (max-width: 768px) {
-	main {
-		width: 100vw;
-		margin-left: 0;
-	}
-
-	nav ul {
-		justify-content: center;
-	}
-
-	nav a {
-		font-size: 12px;
-		margin: 0 5px;
-	}
-
-	body {
-		padding: 150px 0 0;
-	}
-
-	main h1 {
-		font-size: 28px;
-	}
 }
 
 main h1,
@@ -216,6 +185,11 @@ main strong {
 	margin-bottom: 30px;
 }
 
+.server-label,
+.cta-button {
+	font-size: 18px;
+}
+
 .server-label {
 	display: block;
 	background: rgba(0, 0, 0, 0.7);
@@ -228,7 +202,6 @@ main strong {
 	text-align: center;
 	color: var(--light);
 	text-shadow: 2px 2px var(--dark);
-	font-size: 18px;
 }
 
 .cta-button {
@@ -237,7 +210,6 @@ main strong {
 	padding: 15px 30px;
 	text-decoration: none;
 	border-radius: var(--radius);
-	font-size: 18px;
 	display: inline-block;
 	margin-bottom: 40px;
 	transition: transform 0.3s;
@@ -284,6 +256,57 @@ footer {
 	0% { box-shadow: 0 0 10px var(--pink); }
 	50% { box-shadow: 0 0 20px var(--pink), 0 0 30px #ff1493; }
 	100% { box-shadow: 0 0 10px var(--pink); }
+}
+
+@media (max-width: 768px) {
+	header {
+		flex-wrap: wrap;
+	}
+
+	.logo img {
+		width: 35px;
+	}
+
+	.logo span {
+		font-size: 10px;
+		padding: 12px 8px;
+	}
+
+	nav {
+		width: 100%;
+	}
+
+	nav ul {
+		justify-content: center;
+		gap: 6px;
+	}
+
+	nav a {
+		font-size: 10px;
+		margin: 0;
+	}
+
+	main h1 {
+		font-size: 20px;
+		margin: 50px auto 25px;
+	}
+
+	main h2 {
+		font-size: 18px;
+		margin: 50px auto 10px;
+	}
+
+	main p,
+	main ul,
+	.server-label,
+	.cta-button {
+		font-size: 12px;
+	}
+
+	.announcement-date,
+	footer {
+		font-size: 10px;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
