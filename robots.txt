@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /downloads/worlds/
+Disallow: /downloads/resourcepacks/

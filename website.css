@@ -77,7 +77,7 @@ header {
 	height: auto;
 }
 
-.logo h1 {
+.logo span {
 	font-size: 12px;
 	color: var(--light);
 	background: rgba(255, 105, 180, 0.7);

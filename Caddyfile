@@ -9,6 +9,7 @@
         X-Content-Type-Options "nosniff"                       # prevent MIME-type sniffing
         Content-Security-Policy "frame-ancestors *"              # allow embedding on any site
         Referrer-Policy "strict-origin-when-cross-origin"      # limit referrer data on cross-origin links
+        Strict-Transport-Security "max-age=2592000; includeSubDomains" # enforce HTTPS for 30 days
     }
 
     @cacheable {
