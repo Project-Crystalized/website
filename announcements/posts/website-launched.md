@@ -5,7 +5,7 @@ The Crystalized website is officially live! 🚀✨
 > 📣 Running a subproject or have something cool to share? Ask the admins if you'd like an announcement published here!
 
 
-Big thanks to mrickets 🦗  for crafting such a beautiful design, and cooltexture for executing the ideas and tie everything together!  🌟 
+Big thanks to crickets🦗  for crafting such a beautiful design, and cooltexture for executing the ideas and tie everything together!  🌟 
 
 
 ## What's on the site?

@@ -32,7 +32,7 @@ html {
 
 body {
 	color: #fff;
-	padding: 120px 0 0;
+	padding: 100px 0 0;
 	text-align: center;
 	overflow-x: hidden;
 }
@@ -121,7 +121,7 @@ main h2 {
 
 main h1 {
 	font-size: 48px;
-	margin: 80px auto 40px;
+	margin: 60px auto 40px;
 	background: linear-gradient(90deg, var(--pink), var(--light), var(--pink));
 	background-size: 200% auto;
 	-webkit-background-clip: text;
@@ -292,7 +292,7 @@ footer {
 
 	main h1 {
 		font-size: 20px;
-		margin: 50px auto 25px;
+		margin: 40px auto 25px;
 	}
 
 	main h2 {
