@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Updates the announcements list in index.html from .md files in posts/."""
+"""Updates the announcements list in index.html and rss.xml from .md files in posts/."""
 
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 DIR = Path(__file__).parent
+SITE = "https://crystalized.cc"
 START = "<!-- announcements:start -->"
 END = "<!-- announcements:end -->"
 
@@ -32,22 +33,67 @@ def parse_md(path: Path) -> tuple[str, str]:
     return title, " ".join(desc_lines).strip()
 
 
-def main():
-    md_files = sorted((DIR / "posts").glob("*.md"), reverse=True)
-
+def build_entries(md_files):
     entries = []
     for f in md_files:
         title, desc = parse_md(f)
-        date = datetime.fromtimestamp(f.stat().st_mtime).strftime("%Y-%m-%d")
-        entries.append(f'\t\t<li><a href="/announcements/posts/{f.name}">{title}</a> \u2014 {date}: {desc}...</li>')
+        date = datetime.fromtimestamp(f.stat().st_mtime, tz=timezone.utc)
+        entries.append((f.name, title, desc, date))
+    return entries
 
-    list_html = "\n".join(entries)
 
+def write_feed(entries):
+    ns = "http://www.w3.org/2005/Atom"
+    feed_id = f"{SITE}/announcements/"
+    latest = entries[0][3] if entries else datetime.now(tz=timezone.utc)
+
+    items = []
+    for name, title, desc, date in entries:
+        items.append(f"""  <entry>
+    <title>{title}</title>
+    <link href="{SITE}/announcements/posts/{name}" rel="alternate"/>
+    <id>{SITE}/announcements/posts/{name}</id>
+    <updated>{date.isoformat()}</updated>
+    <summary>{desc}</summary>
+  </entry>""")
+
+    feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="{ns}">
+  <title>Crystalized Announcements</title>
+  <link href="{feed_id}" rel="alternate"/>
+  <link href="{SITE}/announcements/atom.xml" rel="self"/>
+  <id>{feed_id}</id>
+  <updated>{latest.isoformat()}</updated>
+  <subtitle>Latest announcements from the Crystalized Minecraft server</subtitle>
+{chr(10).join(items)}
+</feed>
+"""
+    (DIR / "atom.xml").write_text(feed)
+    return len(items)
+
+
+def write_index(entries):
+    list_items = []
+    for name, title, desc, date in entries:
+        list_items.append(f'\t\t<li><a href="/announcements/posts/{name}">{title}</a> \u2014 {date.strftime("%Y-%m-%d")}: {desc}...</li>')
+
+    list_html = "\n".join(list_items)
     index = (DIR / "index.html").read_text()
     before = index[:index.index(START) + len(START)]
     after = index[index.index(END):]
     (DIR / "index.html").write_text(f"{before}\n{list_html}\n{after}")
-    print(f"Updated index.html ({len(entries)} announcements)")
+    return len(entries)
+
+
+def main():
+    md_files = sorted((DIR / "posts").glob("*.md"), reverse=True)
+    entries = build_entries(md_files)
+
+    n = write_index(entries)
+    print(f"Updated index.html ({n} announcements)")
+
+    n = write_feed(entries)
+    print(f"Updated atom.xml ({n} items)")
 
 
 if __name__ == "__main__":

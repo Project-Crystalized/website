@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Crystalized Announcements</title>
+  <link href="https://crystalized.cc/announcements/" rel="alternate"/>
+  <link href="https://crystalized.cc/announcements/atom.xml" rel="self"/>
+  <id>https://crystalized.cc/announcements/</id>
+  <updated>2026-08-19T20:39:03.299200+00:00</updated>
+  <subtitle>Latest announcements from the Crystalized Minecraft server</subtitle>
+  <entry>
+    <title>🎉 Crystalized launches a website!</title>
+    <link href="https://crystalized.cc/announcements/posts/website-launched.md" rel="alternate"/>
+    <id>https://crystalized.cc/announcements/posts/website-launched.md</id>
+    <updated>2026-08-19T20:39:03.299200+00:00</updated>
+    <summary>The Crystalized website is officially live! 🚀✨</summary>
+  </entry>
+</feed>
