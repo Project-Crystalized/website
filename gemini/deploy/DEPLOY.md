@@ -11,7 +11,7 @@ Setup instructions for running the Gemini capsule with [Agate](https://github.co
 
 ```bash
 # Symlink service file
-sudo ln -s /var/www/html/gemini/gemini/deploy/agate.service /etc/systemd/system/agate.service
+sudo ln -s /var/www/html/gemini/deploy/agate.service /etc/systemd/system/agate.service
 
 # Create certs directory (agate generates TLS certs here on first run)
 sudo mkdir -p /var/lib/agate/certs
