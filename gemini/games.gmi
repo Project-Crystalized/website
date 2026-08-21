@@ -1,0 +1,31 @@
+# Our Games
+
+## Litestrike
+
+The concept is similar to Counter Strike or Valorant. There are two teams that are fighting against each other in a Map.
+
+One of the teams, the placers, gets a bomb called the SHARD. That team needs to bring the SHARD to one of a few specific places on the map, and plant it there, and once they defend the SHARD for 40 seconds, then will claim their sweet sweet victory. They can also win by killing the entire enemy team.
+
+The other team, the breakers, have to prevent the SHARD from being planted, or defuse the SHARD after it has been planted.
+
+## Knockoff
+
+Similar to Super Smash Bros. Everyone is against everyone on a arena that consists of floating islands.
+
+Punching other players doesnt deal damage, it increases their percentage. The more percentage a player has, the more knockback they will take. If you fall off the map you loose a life, everyone has 5 lifes. The last player alive wins.
+
+The map will move over time and throw hazards at you. Powerups spawn around the Arena.
+
+## Crystal Blitz
+
+Crystal Blitz game is similar to bedwars, but with a few unique twists that make the gameplay feel pretty different.
+
+## Botanica
+
+An Explanation will follow.
+
+---
+
+=> index.gmi Home
+=> downloads.gmi Downloads
+=> announcements/ Announcements

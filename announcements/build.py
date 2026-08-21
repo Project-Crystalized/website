@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Updates the announcements list in index.html and rss.xml from .md files in posts/."""
+"""Updates the announcements list in index.html, atom.xml, and gemini/ from .md files in posts/."""
 
 from datetime import datetime, timezone
 from pathlib import Path
 
+from md2gemini import md2gemini
+
 DIR = Path(__file__).parent
 SITE = "https://crystalized.cc"
+GEMINI = DIR.parent / "gemini" / "announcements"
 START = "<!-- announcements:start -->"
 END = "<!-- announcements:end -->"
 
@@ -93,6 +96,27 @@ def write_index(entries):
     return len(entries)
 
 
+def write_gemini_index(entries):
+    GEMINI.mkdir(parents=True, exist_ok=True)
+    lines = ["# Announcements", ""]
+    for name, title, desc, date in entries:
+        gmi_name = name.removesuffix(".md") + ".gmi"
+        lines.append(f"=> posts/{gmi_name} {title} \u2014 {date.strftime('%Y-%m-%d')}")
+    lines.append("")
+    lines.append("=> ../index.gmi Home")
+    lines.append("")
+    (GEMINI / "index.gmi").write_text("\n".join(lines))
+    return len(entries)
+
+
+def write_gemini_posts(md_files):
+    (GEMINI / "posts").mkdir(parents=True, exist_ok=True)
+    for f in md_files:
+        gmi = md2gemini(f.read_text(), links="copy", plain=True, md_links=True)
+        (GEMINI / "posts" / (f.stem + ".gmi")).write_text(gmi)
+    return len(md_files)
+
+
 def main():
     md_files = sorted((DIR / "posts").glob("*.md"), reverse=True)
     entries = build_entries(md_files)
@@ -102,6 +126,12 @@ def main():
 
     n = write_feed(entries)
     print(f"Updated atom.xml ({n} items)")
+
+    n = write_gemini_index(entries)
+    print(f"Updated gemini/announcements/index.gmi ({n} announcements)")
+
+    n = write_gemini_posts(md_files)
+    print(f"Updated gemini/announcements/posts/ ({n} posts)")
 
 
 if __name__ == "__main__":

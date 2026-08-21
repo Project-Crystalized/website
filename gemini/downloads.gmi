@@ -1,0 +1,36 @@
+# Downloads
+
+Here are all the publicly available download links. Binary files require a web browser.
+
+=> https://crystalized.cc/downloads/resourcepacks/crystalized-latest.zip Resource Pack (via HTTPS)
+=> https://crystalized.cc/downloads/worlds/ Maps directory listing (via HTTPS)
+=> https://github.com/Project-Crystalized Source Code on GitHub
+
+## Example map_config.json for making a Litestrike map
+
+```
+{
+	"version": 3,
+	"placer_spawn": [45.5, 171.5, 26.5],
+	"breaker_spawn": [47.5, 171.5, -82.5],
+	"queue_spawn": [101.5, 171.5, 4.5],
+
+	"map_name": "Zero",
+
+	"map_features": {
+		"launch_pad_block": "purple_concrete_powder",
+		"levi_pad_block": "purpur_block"
+	},
+
+	"border_marker": "cherry_planks",
+
+	"border_block_type": "red_stained_glass",
+	"border_height": 15
+}
+```
+
+---
+
+=> index.gmi Home
+=> games.gmi Games
+=> announcements/ Announcements
