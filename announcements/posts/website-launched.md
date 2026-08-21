@@ -28,3 +28,5 @@ Got design suggestions, or found something broken? DM **__m1ra**, **mrickets**, 
 We're still working hard on getting the server ready for release. Stay tuned for more updates! 📅
 
 See you in-game! 💎⛏️
+
+Posted on: 2026-08-19

@@ -33,11 +33,19 @@ def parse_md(path: Path) -> tuple[str, str]:
     return title, " ".join(desc_lines).strip()
 
 
+def parse_date(path: Path) -> datetime:
+    for line in path.read_text().splitlines():
+        if line.startswith("Posted on:"):
+            return datetime.strptime(line.split(":", 1)[1].strip(), "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    print(f"WARNING: {path.name} has no 'Posted on:' date, using file modification time")
+    return datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+
+
 def build_entries(md_files):
     entries = []
     for f in md_files:
         title, desc = parse_md(f)
-        date = datetime.fromtimestamp(f.stat().st_mtime, tz=timezone.utc)
+        date = parse_date(f)
         entries.append((f.name, title, desc, date))
     return entries
 
