@@ -28,6 +28,7 @@ a {
 html {
 	background: url("/assets/websitestars.webp") center / cover no-repeat fixed, linear-gradient(135deg, #131372, #ff69b4);
 	overscroll-behavior: none;
+	min-height: 100vh;
 }
 
 body {
@@ -35,6 +36,9 @@ body {
 	padding: 100px 0 0;
 	text-align: center;
 	overflow-x: hidden;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 /* background sparkles - delete this block to disable */
@@ -247,6 +251,7 @@ footer {
 	padding: 10px;
 	text-align: center;
 	font-size: 12px;
+	margin-top: auto;
 }
 
 @keyframes shine {
