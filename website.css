@@ -353,3 +353,14 @@ figure img {
 		animation: none;
 	}
 }
+
+.hero-pic {
+	max-width: min(800px, 90vw);
+}
+
+.hero-pic img {
+	border-radius: 0;
+	opacity: 0.85;
+	-webkit-mask-image: radial-gradient(ellipse closest-side at center, black 84%, transparent 97%);
+	mask-image: radial-gradient(ellipse closest-side at center, black 84%, transparent 97%);
+}
