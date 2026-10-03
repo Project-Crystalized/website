@@ -254,6 +254,24 @@ footer {
 	margin-top: auto;
 }
 
+figure {
+	max-width: min(1100px, 90vw);
+	margin: 0 auto 35px;
+}
+
+figure img {
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+	display: block;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+}
+
 @keyframes shine {
 	0%, 70% { background-position: 0% center; }
 	85%, 100% { background-position: 200% center; }
@@ -293,6 +311,10 @@ footer {
 	nav a {
 		font-size: 10px;
 		margin: 0;
+	}
+
+	.gallery {
+		grid-template-columns: 1fr;
 	}
 
 	main h1 {
