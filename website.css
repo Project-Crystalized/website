@@ -264,6 +264,28 @@ figure img {
 	height: auto;
 	border-radius: var(--radius);
 	display: block;
+	cursor: zoom-in;
+}
+
+.lightbox {
+	position: fixed;
+	inset: 0;
+	background: rgba(5, 0, 74, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2000;
+	cursor: zoom-out;
+}
+
+.lightbox.hidden {
+	display: none;
+}
+
+.lightbox img {
+	max-width: 90vw;
+	max-height: 90vh;
+	border-radius: var(--radius);
 }
 
 .gallery {

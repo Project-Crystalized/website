@@ -14,4 +14,22 @@
 			ticking = true;
 		}
 	}, { passive: true });
+
+	// Lightbox: click any figure image to view it large, click again or press Escape to close
+	const lightbox = document.createElement("div");
+	lightbox.className = "lightbox hidden";
+	const lightboxImg = document.createElement("img");
+	lightbox.appendChild(lightboxImg);
+	document.body.appendChild(lightbox);
+	lightbox.addEventListener("click", () => lightbox.classList.add("hidden"));
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") lightbox.classList.add("hidden");
+	});
+	document.querySelectorAll("figure img").forEach((img) => {
+		img.addEventListener("click", () => {
+			lightboxImg.src = img.src;
+			lightboxImg.alt = img.alt;
+			lightbox.classList.remove("hidden");
+		});
+	});
 </script>
