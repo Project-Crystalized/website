@@ -11,6 +11,8 @@ Version: 26.2
 => https://github.com/Project-Crystalized Our Code
 => https://crystalized.cc/downloads/resourcepacks/crystalized-latest.zip Resource Pack (via HTTPS)
 
+=> gameplayPics/lobby_epic_thunder.webp Thunder over the lobby (image)
+
 ## About Us
 
 * Our community: We are a community of people originating from a now closed Minecraft server called tubnet.gg. We are a diverse community from all over the world.
